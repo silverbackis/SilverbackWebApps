@@ -1,0 +1,80 @@
+version: '3.7'
+
+x-cache:
+  &cache
+    cache_from:
+        - ${CONTAINER_REGISTRY_BASE}/varnish
+
+services:
+    mysql:
+        volumes:
+            - mysql-data:/var/lib/mysql:rw,delegated
+        env_file:
+            - shared/.env.prod.local
+        restart: on-failure
+
+    varnish:
+        environment:
+            VIRTUAL_HOST: ${API_HOST}
+            HTTPS_METHOD: ${HTTPS_METHOD}
+            LETSENCRYPT_HOST: ${API_HOST}
+            LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+        env_file:
+            - shared/.env.prod.local
+        restart: on-failure
+        networks:
+            - proxy_api
+
+    app:
+        env_file:
+            - shared/.env.prod.local
+            - app/_docker/.env.prod.local
+        restart: on-failure
+
+    app_varnish:
+        image: ${CONTAINER_REGISTRY_BASE}/varnish
+        build:
+            context: ./app_varnish
+            target: app_varnish
+            <<: *cache
+        depends_on:
+            - app
+        tmpfs:
+            - /usr/local/var/varnish:exec
+        environment:
+            VIRTUAL_HOST: ${APP_HOST}
+            HTTPS_METHOD: ${HTTPS_METHOD}
+            LETSENCRYPT_HOST: ${APP_HOST}
+            LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+        networks:
+            - proxy_app
+            - app
+
+    api:
+        volumes:
+            - api-public:/srv/api/public:rw,cached
+            - ./api/config/jwt:/srv/api/config/jwt:rw,cached
+            # Had an issue where a config file wasn't removed after a composer update - may have been another issue with git fetch in prod
+            # - ./api/config:/srv/api/config:rw,cached
+        env_file:
+            - shared/.env.prod.local
+            - ./api/.env.prod.local
+        restart: on-failure
+
+    nginx:
+        volumes:
+            - api-public:/srv/api/public:ro,cached
+        env_file:
+            - shared/.env.prod.local
+        restart: on-failure
+
+networks:
+    proxy_app:
+        external: true
+        x-priority: 1000
+    proxy_api:
+        external: true
+
+volumes:
+    api-public:
+    mysql-data:

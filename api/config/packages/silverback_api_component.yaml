@@ -1,0 +1,4 @@
+silverback_api_component:
+    mailer:
+        logo_src: 'images/logo.svg'
+        website_name: 'Silverback Web Apps'

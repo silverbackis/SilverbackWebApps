@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i')
+
+@import '~bulma/sass/utilities/initial-variables'
+@import '~bulma/sass/utilities/functions'
+
+//Colours:
+//Blue: 1990EB
+//Background grey: F6F6F6
+//Text grey: 535353
+//Footer blue:
+//Nav off / border grey: 7E7E7E
+
+$blue: #1990EB
+$blue-dark: darken($blue, 20%)
+$blue-light: #92D0FF
+$red: #e5133f
+$primary: $blue
+$secondary: $blue-dark
+$grey-lightest: #F6F6F6
+$grey-dark: #535353
+$grey: #7E7E7E
+$text: $grey-dark
+
+$family-roboto: Roboto, $family-sans-serif
+$family-primary: $family-roboto
+$label-weight: 500
+
+$input-height: 2.8em
+$control-border-width: 1px
+$control-padding-horizontal: calc(1em - #{$control-border-width})
+
+//$button-border-width: 1px
+//$button-padding-vertical: calc(1em - #{$button-border-width})
+
+// $radius: 6px
+$link: $blue-dark
+
+$navbar-padding-vertical: 1rem
+$navbar-height: 4rem
+$navbar-height-desktop: 6.5rem
+$navbar-item-img-max-height: calc(#{$navbar-height} - #{$navbar-padding-vertical * 2})
+$navbar-item-img-max-height-desktop: calc(#{$navbar-height-desktop} - #{$navbar-padding-vertical * 2})
+$navbar-item-color: $grey
+$navbar-item-hover-color: $text
+$navbar-item-active-color: $text
+$navbar-item-hover-background-color: transparent
+$navbar-item-active-background-color: transparent
+
+$box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+
+//$pre-background: $grey-dark
+//$pre: $grey-lightest
+//$code: darken($red, 10%)
+
+//$content-blockquote-background-color: $white
+//$content-blockquote-border-left: 4px solid $primary
+//$content-blockquote-padding: .8em 1.05em
+
+.content blockquote
+  &:before
+    content: open-quote
+  &:after
+    content: close-quote
+  font-size: $size-4
+
+@import '~bulma/sass/utilities/derived-variables.sass'

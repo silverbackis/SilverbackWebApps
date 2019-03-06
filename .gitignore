@@ -1,0 +1,7 @@
+.idea/
+.DS_Store
+mysql/data/
+**/.env.local
+**/.env.local.php
+**/.env.*.local
+.php_cs.cache
