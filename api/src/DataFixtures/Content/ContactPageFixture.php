@@ -20,7 +20,12 @@ class ContactPageFixture extends AbstractPageFixture
                 ->setMetaDescription('')
             ;
 
-            $this->addComponent((new Hero())->setTitle('Contact Us'), $page);
+            $hero = (new Hero())
+                ->setTitle('Get in')
+                ->setSubtitle('contact')
+                ->setComponentName('ContactHero')
+            ;
+            $this->addComponent($hero, $page);
 
             $form = new Form();
             $form

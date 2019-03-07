@@ -1,7 +1,7 @@
 <template>
-  <hero v-bind="$props" class="home-hero">
+  <hero v-bind="$props" class="how-we-work-hero">
     <template slot="hero-svg">
-      <img class="hero-svg" src="~assets/images/hero/home.svg" />
+      <img class="hero-svg" src="~assets/images/hero/how-we-work.svg" />
     </template>
   </hero>
 </template>
@@ -18,13 +18,14 @@ export default {
 
 <style lang="sass">
   @import '~bulma/sass/utilities/mixins'
-  .home-hero
+  .how-we-work-hero
     .hero-svg
       position: absolute
-      top: -20%
+      top: -10%
       height: 150%
-      left: 52%
-      +desktop
-        left: auto
-        right: 115px
+      right: -19%
+    .hero .title > span.main
+      font-size: 7rem
+      padding-left: 9rem
+      margin-top: -2rem
 </style>

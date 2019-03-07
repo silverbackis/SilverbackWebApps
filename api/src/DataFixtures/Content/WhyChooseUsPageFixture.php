@@ -12,15 +12,17 @@ class WhyChooseUsPageFixture extends AbstractPageFixture
      */
     public function load(ObjectManager $manager): void
     {
-        $pageFixture = $this->getPage('why-choose-us', '/why-choose-us');
+        $pageFixture = $this->getPage('why-choose-silverback', '/why-choose-silverback');
         if ($pageFixture->isNew()) {
             $page = $pageFixture->getPage();
             $page
-                ->setTitle('Why Choose Us?')
+                ->setTitle('Why Choose Silverback?')
             ;
 
             $hero = (new Hero())
-                ->setTitle('Why Choose Us?')
+                ->setTitle('Why choose')
+                ->setSubtitle('Silverback?')
+                ->setComponentName('WhyChooseUsHero')
             ;
             $this->addComponent($hero, $page);
             $content = $this->contentFactory->create(null, [

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1040px" height="901px" viewBox="0 0 1040 901" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>hero-contact</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="hero-contact" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M520.189838,0 C232.887561,0 0,182.837164 0,408.388952 C0,515.454086 52.186128,612.676286 137.801092,685.569721 C134.551067,756.605998 119.693806,852.063898 67.7862517,901 C167.23704,901 268.82356,835.720911 328.995465,788.549109 C388.145934,807.027826 452.68216,817.242193 520.189838,817.242193 C807.027826,817.242193 1039.91539,634.033598 1039.91539,408.388952 C1039.91539,182.837164 807.027826,0 520.189838,0 Z" id="conversation-speech-bubbles-" fill="#48A2A2"></path>
+    </g>
+</svg>

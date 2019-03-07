@@ -15,7 +15,7 @@ services:
 
     varnish:
         environment:
-            VIRTUAL_HOST: ${API_HOST}
+            VIRTUAL_HOST: ${API_HOST},silverbackwebapps.co.uk
             HTTPS_METHOD: ${HTTPS_METHOD}
             LETSENCRYPT_HOST: ${API_HOST}
             LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}

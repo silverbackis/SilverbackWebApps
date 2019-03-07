@@ -21,7 +21,7 @@ class LayoutNavBar extends AbstractFixture implements DependentFixtureInterface
     private static $pages = [
         'home' => 'Home',
         'how-we-work' => 'How We Work',
-        'why-choose-us' => 'Why Choose Us?',
+        'why-choose-silverback' => 'Why Choose Us?',
         'pricing' => 'Pricing',
         'contact' => 'Contact'
     ];

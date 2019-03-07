@@ -83,7 +83,7 @@ export default {
           border-radius: 50%
           transform: translateX(-50%)
     .container
-      margin-bottom: 50px
+      margin-bottom: 70px
     .title
       > span
         display: block

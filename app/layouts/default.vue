@@ -7,6 +7,7 @@
           :component="getEntity(structure.navBar['@id'])"
           :items-at-end="true"
           class="is-transparent is-dark"
+          :style="{ backgroundColor: `rgba(33,46,99,${navOpacity})`, boxShadow: `inset 0 -8px 0px -4px rgba(75,162,161,${navOpacity})` }"
         >
           <template slot="logo">
             <nuxt-link
@@ -40,7 +41,24 @@ export default {
     AdminBar: () => import('~/.nuxt/bwstarter/bulma/components/Admin/AdminBar'),
     Notifications
   },
-  mixins: [LayoutMixin]
+  mixins: [LayoutMixin],
+  data() {
+    return {
+      navOpacity: 0
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateNavOpacity)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.updateNavOpacity)
+  },
+  methods: {
+    updateNavOpacity() {
+      this.navOpacity = Math.max((window.scrollY - 120) / 150, 0)
+      console.log('scroll...', window.scrollY, this.navOpacity)
+    }
+  }
 }
 </script>
 
@@ -64,7 +82,6 @@ export default {
       flex: 1 0 auto
 
   .navbar
-    background-color: transparent !important
     .navbar-item,
     .navbar-link
       +timeburner

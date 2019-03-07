@@ -20,7 +20,9 @@ class HowWeWorkPageFixture extends AbstractPageFixture
             ;
 
             $hero = (new Hero())
-                ->setTitle('How We Work')
+                ->setTitle('How we')
+                ->setSubtitle('work')
+                ->setComponentName('HowWeWorkHero')
             ;
             $this->addComponent($hero, $page);
             $content = $this->contentFactory->create(null, [

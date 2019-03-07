@@ -20,7 +20,9 @@ class PricingPageFixture extends AbstractPageFixture
             ;
 
             $hero = (new Hero())
-                ->setTitle('Pricing')
+                ->setTitle('Transparent')
+                ->setSubtitle('pricing')
+                ->setComponentName('PricingHero')
             ;
             $this->addComponent($hero, $page);
             $content = $this->contentFactory->create(null, [
