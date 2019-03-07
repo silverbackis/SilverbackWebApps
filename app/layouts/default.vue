@@ -73,7 +73,7 @@ export default {
       padding: $navbar-padding-vertical .7rem
       transition: opacity .3s
       &:not(:hover):not(.is-active):not(.is-logo)
-        opacity: .7
+        opacity: .8
       img
         +desktop
           max-height: $navbar-item-img-max-height-desktop

@@ -21,8 +21,9 @@ class HomePageFixture extends AbstractPageFixture
             ;
 
             $hero = (new Hero())
-                ->setTitle('Welcome')
-                ->setSubtitle('Silverback Web Apps')
+                ->setTitle('It\'s <span class="small">about</span>')
+                ->setSubtitle('time')
+                ->setComponentName('HomeHero')
             ;
             $this->addComponent($hero, $page);
             $content = $this->contentFactory->create(null, [
