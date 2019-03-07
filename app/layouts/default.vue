@@ -6,7 +6,7 @@
           v-if="structure && structure.navBar"
           :component="getEntity(structure.navBar['@id'])"
           :items-at-end="true"
-          class="is-dark"
+          class="is-transparent is-dark"
         >
           <template slot="logo">
             <nuxt-link
@@ -50,16 +50,31 @@ export default {
   @import '~bulma/sass/utilities/mixins'
 
   .layout
-    padding-top: $navbar-height
+    // padding-top: $navbar-height
     display: flex
     min-height: 100vh
     flex-direction: column
     .page
       padding-bottom: 3rem
     +desktop
-      padding-top: $navbar-height-desktop
+      // padding-top: $navbar-height-desktop
       .navbar
         height: $navbar-height-desktop
     .site-content
       flex: 1 0 auto
+
+  .navbar
+    background-color: transparent !important
+    .navbar-item,
+    .navbar-link
+      +timeburner
+      font-weight: 700
+      font-size: 1.1rem
+      padding: $navbar-padding-vertical .7rem
+      transition: opacity .3s
+      &:not(:hover):not(.is-active):not(.is-logo)
+        opacity: .7
+      img
+        +desktop
+          max-height: $navbar-item-img-max-height-desktop
 </style>

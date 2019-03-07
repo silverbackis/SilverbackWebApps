@@ -5,24 +5,22 @@ namespace App\DataFixtures\Content;
 use Doctrine\Common\Persistence\ObjectManager;
 use Silverback\ApiComponentBundle\Entity\Component\Hero\Hero;
 
-class HomePageFixture extends AbstractPageFixture
+class PricingPageFixture extends AbstractPageFixture
 {
     /**
      * @param ObjectManager $manager
      */
     public function load(ObjectManager $manager): void
     {
-        $pageFixture = $this->getPage('home', '/');
+        $pageFixture = $this->getPage('pricing', '/pricing');
         if ($pageFixture->isNew()) {
             $page = $pageFixture->getPage();
             $page
-                ->setTitle('')
-                ->setMetaDescription('Welcome to Silverback Web Apps')
+                ->setTitle('Pricing')
             ;
 
             $hero = (new Hero())
-                ->setTitle('Welcome')
-                ->setSubtitle('Silverback Web Apps')
+                ->setTitle('Pricing')
             ;
             $this->addComponent($hero, $page);
             $content = $this->contentFactory->create(null, [

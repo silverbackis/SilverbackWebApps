@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,700i')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,500,700,700i')
+
+@font-face
+  font-family: 'Time Burner'
+  src: url('~assets/fonts/timeburnernormal-webfont.woff2') format('woff2'),
+  url('~assets/fonts/timeburnernormal-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Time Burner'
+  src: url('~assets/fonts/timeburnerbold-webfont.woff2') format('woff2'),
+  url('~assets/fonts/timeburnerbold-webfont.woff') format('woff')
+  font-weight: 700
+  font-style: normal
 
 @import '~bulma/sass/utilities/initial-variables'
 @import '~bulma/sass/utilities/functions'
@@ -10,19 +24,19 @@
 //Footer blue:
 //Nav off / border grey: 7E7E7E
 
-$blue: #1990EB
-$blue-dark: darken($blue, 20%)
-$blue-light: #92D0FF
+$blue: rgb(33, 46, 99)
+$teal: rgb(75, 162, 161)
 $red: #e5133f
 $primary: $blue
-$secondary: $blue-dark
+$secondary: $teal
 $grey-lightest: #F6F6F6
 $grey-dark: #535353
 $grey: #7E7E7E
 $text: $grey-dark
 
-$family-roboto: Roboto, $family-sans-serif
-$family-primary: $family-roboto
+$family-open-sans: 'Open Sans', $family-sans-serif
+$family-time-burner: 'Time Burner', $family-open-sans
+$family-primary: $family-open-sans
 $label-weight: 500
 
 $input-height: 2.8em
@@ -33,13 +47,13 @@ $control-padding-horizontal: calc(1em - #{$control-border-width})
 //$button-padding-vertical: calc(1em - #{$button-border-width})
 
 // $radius: 6px
-$link: $blue-dark
+$link: $blue
 
 $navbar-padding-vertical: 1rem
 $navbar-height: 4rem
-$navbar-height-desktop: 6.5rem
+$navbar-height-desktop: 6rem
 $navbar-item-img-max-height: calc(#{$navbar-height} - #{$navbar-padding-vertical * 2})
-$navbar-item-img-max-height-desktop: calc(#{$navbar-height-desktop} - #{$navbar-padding-vertical * 2})
+$navbar-item-img-max-height-desktop: calc(#{$navbar-height-desktop} - #{$navbar-padding-vertical * 3})
 $navbar-item-color: $grey
 $navbar-item-hover-color: $text
 $navbar-item-active-color: $text
@@ -48,6 +62,8 @@ $navbar-item-active-background-color: transparent
 
 $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
 
+=timeburner
+  font-family: $family-time-burner
 //$pre-background: $grey-dark
 //$pre: $grey-lightest
 //$code: darken($red, 10%)

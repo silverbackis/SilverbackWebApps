@@ -50,6 +50,7 @@ export default {
       {
         pagesDepth: 3,
         components: {
+          Hero: '~/components/bwstarter/Hero'
         }
         //, disabledComponents: ['Hero', 'Content', 'Form'],
         // enabledComponents: null

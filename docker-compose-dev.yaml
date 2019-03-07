@@ -42,7 +42,7 @@ services:
         volumes:
             - ./app:/usr/src/app:rw,delegated
             # Uncomment this line to link in local node packages (comment during yarn upgrades)
-#            - /Volumes/LaCie/GitHub/_ComponentsWebApp/CWAModules/packages:/usr/src/app/node_modules/@cwamodules:ro,cached
+            - /Volumes/LaCie/GitHub/_ComponentsWebApp/CWAModules/packages:/usr/src/app/node_modules/@cwamodules:ro,cached
         env_file:
             - shared/.env.local
             - app/_docker/.env.local

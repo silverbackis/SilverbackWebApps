@@ -3,7 +3,11 @@
 namespace App\DataFixtures\Layout;
 
 use App\DataFixtures\Content\AbstractPageFixture;
+use App\DataFixtures\Content\ContactPageFixture;
 use App\DataFixtures\Content\HomePageFixture;
+use App\DataFixtures\Content\HowWeWorkPageFixture;
+use App\DataFixtures\Content\PricingPageFixture;
+use App\DataFixtures\Content\WhyChooseUsPageFixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Silverback\ApiComponentBundle\DataFixtures\AbstractFixture;
@@ -16,7 +20,10 @@ class LayoutNavBar extends AbstractFixture implements DependentFixtureInterface
 {
     private static $pages = [
         'home' => 'Home',
-        'contact' => 'Contact Us'
+        'how-we-work' => 'How We Work',
+        'why-choose-us' => 'Why Choose Us?',
+        'pricing' => 'Pricing',
+        'contact' => 'Contact'
     ];
     /**
      * @param ObjectManager $manager
@@ -45,9 +52,6 @@ class LayoutNavBar extends AbstractFixture implements DependentFixtureInterface
                 ->setRoute($page->getRoutes()->first() ?: null)
                 ->setParentComponent($navBar)
             ;
-            if ($pageReference === 'contact') {
-                $navBarItem->setClassName('button is-primary is-rounded');
-            }
             $this->addEntity($navBarItem);
         }
 
@@ -63,7 +67,11 @@ class LayoutNavBar extends AbstractFixture implements DependentFixtureInterface
     {
         return [
             DefaultLayout::class,
-            HomePageFixture::class
+            HomePageFixture::class,
+            HowWeWorkPageFixture::class,
+            WhyChooseUsPageFixture::class,
+            PricingPageFixture::class,
+            ContactPageFixture::class
         ];
     }
 }

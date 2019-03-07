@@ -81,4 +81,27 @@ body
   .button
     height: $input-height
 
+.title,
+.subtitle
+  +timeburner
+.content
+  h1, h2, h3, h4, h5, h6
+    +timeburner
+
+@function rgb-format($color)
+  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})")
+
+.hero
+  position: relative
+  overflow: visible
+  &:after
+    content: ''
+    position: absolute
+    top: 100%
+    left: -2.5vw
+    right: -2.5vw
+    height: 300px
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="12px" width="200px"><path d="M0 0 Q 100 12 200 0" stroke="#{rgb-format($teal)}" fill="#{rgb-format($blue)}" stroke-width="1" /></svg>') 50% 0 no-repeat
+    background-size: 100% auto
+    color: green
 @import "custom_checkbox_radio"
