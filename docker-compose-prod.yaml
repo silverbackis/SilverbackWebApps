@@ -42,9 +42,9 @@ services:
         tmpfs:
             - /usr/local/var/varnish:exec
         environment:
-            VIRTUAL_HOST: ${APP_HOST},silverbackwebapps.com,www.silverbackwebapps.org,silverbackwebapps.org,www.silverbackwebapps.co.uk,silverbackwebapps.co.uk,www.silverbackwebapps.co.uk,silverbackwebapps.co.uk,www.britishwebapps.co.uk,britishwebapps.co.uk,www.britishwebapps.com,britishwebapps.com
+            VIRTUAL_HOST: ${APP_HOST}
             HTTPS_METHOD: ${HTTPS_METHOD}
-            LETSENCRYPT_HOST: ${APP_HOST}
+            LETSENCRYPT_HOST: ${APP_HOST},silverbackwebapps.com,www.silverbackwebapps.org,silverbackwebapps.org,www.silverbackwebapps.co.uk,silverbackwebapps.co.uk,www.silverbackwebapps.co.uk,silverbackwebapps.co.uk,www.britishwebapps.co.uk,britishwebapps.co.uk,www.britishwebapps.com,britishwebapps.com
             LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
         networks:
             - proxy_app
