@@ -8,8 +8,7 @@
            viewBox="-2 -2 760 1087" xml:space="preserve">
         <defs>
           <clipPath id="clip-path">
-            <rect x="-50%" y="-50%" width="200%" height="80%" fill="white" class="clip-rectangle top" ref="clipRectangle__top" />
-            <rect x="-50%" y="30%" width="200%" height="80%" fill="white" class="clip-rectangle bottom" ref="clipRectangle__bottom" />
+            <rect x="44%" y="-40%" width="6%" height="140%" fill="white" class="clip-rectangle top" ref="clipRectangle__top" />
           </clipPath>
         </defs>
         <path ref="svgLogo__noFace" class="path noface" d="M322.2,0C129.2,0,21.8,90.8,0,272.3c2.5,6.7,3.6,83.8,3.6,83.8l3.3,30.1l6.3,39.3l4.3,20.2l7.9,30l10.3,30.6
@@ -80,8 +79,8 @@ export default {
         }
       )
       .addLabel("mask")
-      .from(this.$refs.clipRectangle__top, .8, { attr: { y: '-100%' }, ease: Power1.easeOut }, "mask")
-      .from(this.$refs.clipRectangle__bottom, .8, { attr: { y: '100%' }, ease: Power1.easeOut }, "mask")
+      .from(this.$refs.clipRectangle__top, 1.2, { attr: { y: '160%' }, ease: Power1.easeOut }, "mask")
+      .to(this.$refs.clipRectangle__top, 1.2, { attr: { x: '-90%', width: '240%' }, ease: Power1.easeOut }, "-=.5")
       .from(
         [this.$refs.svgLogo__top, this.$refs.svgLogo__back],
         3,
@@ -89,7 +88,7 @@ export default {
           morphSVG: this.$refs.svgLogo__noFace,
           ease: Elastic.easeOut
         },
-        "-=.1"
+        "-=.4"
       )
       .staggerFrom(
         chars,
@@ -113,9 +112,9 @@ export default {
   @import 'assets/css/vars'
   @import '~bulma/sass/utilities/mixins'
   .clip-rectangle
-    transform-origin: 100% 50%
+    transform-origin: 50% 50%
     &.top
-      transform: rotate(-30deg)
+      transform: rotate(45deg)
     &.bottom
       transform: rotate(-30deg)
   .path
