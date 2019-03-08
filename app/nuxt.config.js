@@ -37,7 +37,8 @@ export default {
    * Plugins
    */
   plugins: [
-    { src: '~/plugins/fontawesome', ssr: true }
+    { src: '~/plugins/fontawesome', ssr: true },
+    { src: '~/plugins/gsap', ssr: false }
   ],
   /**
    * Modules

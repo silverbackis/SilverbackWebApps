@@ -1,20 +1,20 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.13.0/bin/yarn.js install
+  /usr/local/bin/node /opt/yarn-v1.10.1/bin/yarn.js add gsap
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 Yarn version: 
-  1.13.0
+  1.10.1
 
 Node version: 
-  11.7.0
+  10.12.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/usr/src/app/node_modules/min-document/'
+  Error: ENOENT: no such file or directory, lstat '/usr/src/app/node_modules/schema-utils/'
 
 npm manifest: 
   {
@@ -845,32 +845,32 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
     integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
   
-  "@cwamodules/bulma@^0.4.2":
-    version "0.4.2"
-    resolved "https://registry.yarnpkg.com/@cwamodules/bulma/-/bulma-0.4.2.tgz#488e5286631bf3d4e32e29a4e450c488cfe0e9a0"
-    integrity sha512-bmkEBn9Tl3VYQCbZbEdssr+shB7tuRQaKQ4wHtOyhgn6JaQkrXryNA3Qy1Gm3nX/HxgGwGs/79hxY2M2hR03YQ==
+  "@cwamodules/bulma@^0.4.3":
+    version "0.4.3"
+    resolved "https://registry.yarnpkg.com/@cwamodules/bulma/-/bulma-0.4.3.tgz#69364c255cd1339850f9ebfeed44a629cc16a160"
+    integrity sha512-Fy1K/i5jMnlsaXIBR50mus8SAuzcTcWipbRG9rpIoQd6WzY8uGTxNNJLAx/iQQNMwrRWOtsOhjepBgL+N7ComQ==
     dependencies:
-      "@cwamodules/components" "^0.4.1"
-      "@cwamodules/core" "^0.4.1"
+      "@cwamodules/components" "^0.4.3"
+      "@cwamodules/core" "^0.4.3"
       "@cwamodules/server" "^0.2.21"
       bulma "^0.7.1"
       detect-installed "^2.0.4"
       vuedraggable "^2"
       vuejs-dialog "^1.3.0"
   
-  "@cwamodules/components@^0.4.1":
-    version "0.4.1"
-    resolved "https://registry.yarnpkg.com/@cwamodules/components/-/components-0.4.1.tgz#a3108d5687b65724e5995a0e0d5474e6d9b65488"
-    integrity sha512-GaQ285oJkOxGhp7C8/9khMFoHNmX2j5sYCpB9n3pxTP9fVtaMidk1LCQRo2Tu6XBktIf+BfESkCngVoNjLca7A==
+  "@cwamodules/components@^0.4.3":
+    version "0.4.3"
+    resolved "https://registry.yarnpkg.com/@cwamodules/components/-/components-0.4.3.tgz#64727e94a8df2a4cc9a970255c8877c5bd981026"
+    integrity sha512-bN/ppCTAV/lmcyk2MRUCf6HVDpG2RIZcBsukm2lxfqTzLn5gDaojGmHuEZUdzj9oEAF6YXcJMZ3lprtXzBxUVw==
     dependencies:
-      "@cwamodules/core" "^0.4.1"
+      "@cwamodules/core" "^0.4.3"
       "@cwamodules/server" "^0.2.21"
       flatpickr "^4.5.4"
   
-  "@cwamodules/core@^0.4.1":
-    version "0.4.1"
-    resolved "https://registry.yarnpkg.com/@cwamodules/core/-/core-0.4.1.tgz#aa0be376e5afb0cf30f38e3ea3575c9cc0e3a70f"
-    integrity sha512-ASyC4izW1aEOJYo2f3b8m1Ycentk1vSItpugBSKs0QQSD3+fGljqrYYAMOC9DuTdE5FtM1ETG4b5Grxobb7JdQ==
+  "@cwamodules/core@^0.4.3":
+    version "0.4.3"
+    resolved "https://registry.yarnpkg.com/@cwamodules/core/-/core-0.4.3.tgz#3012803f82ccf7faea6b21ddba25ccacf11c6d84"
+    integrity sha512-fI+sDa6v6ye2fUw67fNF3sF+5ipz+cCG2WPxKGm4pUq4dsbe9nSY9bVFagm9rDS3akUcZsvBowkQR7Sg7/07Pw==
     dependencies:
       "@cwamodules/server" "^0.2.21"
       "@nuxtjs/axios" "^5.3.1"

@@ -3,7 +3,7 @@ vcl 4.0;
 import std;
 
 backend default {
-  .host = "app";
+  .host = "swa_app";
   .port = "3000";
   # Health check
   #.probe = {
@@ -18,7 +18,7 @@ backend default {
 # Hosts allowed to send BAN requests
 acl invalidators {
   "localhost";
-  "app";
+  "swa_app";
 }
 
 sub vcl_backend_response {
