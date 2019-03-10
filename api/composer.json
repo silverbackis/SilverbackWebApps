@@ -1,6 +1,12 @@
 {
     "name": "silverbackis/onsem",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Volumes/LaCie/GitHub/_ComponentsWebApp/ApiComponentBundle"
+        }
+    ],
     "require": {
         "php": "^7.2",
         "ext-ctype": "*",

@@ -56,7 +56,12 @@ export default {
           HowWeWorkHero: '~/components/hero/HowWeWork',
           WhyChooseUsHero: '~/components/hero/WhyChooseUs',
           PricingHero: '~/components/hero/Pricing',
-          ContactHero: '~/components/hero/Contact'
+          ContactHero: '~/components/hero/Contact',
+          Content: '~/components/bwstarter/Content',
+          FeatureTextList: '~/components/bwstarter/FeatureTextList',
+          HomeSpeedFeatures: '~/components/HomeSpeedFeatures',
+          HomeExpertFeatures: '~/components/HomeExpertFeatures',
+          HomePricingContent: '~/components/HomePricingContent'
         }
         //, disabledComponents: ['Hero', 'Content', 'Form'],
         // enabledComponents: null

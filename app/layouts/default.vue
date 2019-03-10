@@ -7,7 +7,9 @@
           :component="getEntity(structure.navBar['@id'])"
           :items-at-end="true"
           class="is-transparent is-dark"
-          :style="{ backgroundColor: `rgba(33,46,99,${navOpacity})`, boxShadow: `inset 0 -8px 0px -4px rgba(75,162,161,${navOpacity})` }"
+          :style="{
+            backgroundColor: `rgba(33,46,99,${navOpacity})`
+          }"
         >
           <template slot="logo">
             <nuxt-link
@@ -25,6 +27,43 @@
       </div>
       <nuxt/>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <nav class="columns">
+          <div class="column is-4">
+            <ul>
+              <li><app-link to="/">Home</app-link></li>
+              <li><app-link to="/how-we-work">How we work</app-link></li>
+              <li><app-link to="/why-choose-silverback">Why choose us?</app-link></li>
+              <li><app-link to="/pricing">Pricing</app-link></li>
+            </ul>
+          </div>
+          <div class="column is-4">
+            <ul>
+              <li><app-link to="/contact">Contact</app-link></li>
+              <li><app-link to="/portfolio">Portfolio</app-link></li>
+              <li><app-link to="/our-platform">Our platform</app-link></li>
+              <li><app-link to="/services">Additional services</app-link></li>
+            </ul>
+          </div>
+          <div class="column is-4">
+            <ul>
+              <li><a href="tel:+442081332939">+44 (0)208 133 2939</a></li>
+              <li><a href="mailto:info@silverbackwebapps.com">info@silverbackwebapps.com</a></li>
+              <li class="logos">
+                <img src="~assets/images/icon-footer-made-in-britain.svg" alt="Made in Britain" />
+                <img src="~assets/images/icon-footer-fsb.svg" alt="FSB Logo" />
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="columns">
+          <div class="column is-12 help">
+            <app-link to="/terms-privacy">Terms & Privacy</app-link> | &copy; {{ new Date().getFullYear() }} Silverback Internet Services Limited VAT: GB 177 0995 64 Company Number: 07120829
+          </div>
+        </div>
+      </div>
+    </footer>
     <notifications/>
     <admin-bar v-if="$bwstarter.isAdmin"/>
   </div>
@@ -55,8 +94,7 @@ export default {
   },
   methods: {
     updateNavOpacity() {
-      this.navOpacity = Math.max((window.scrollY - 120) / 150, 0)
-      console.log('scroll...', window.scrollY, this.navOpacity)
+      this.navOpacity = Math.max(Math.min((window.scrollY - 120) / 150, .97), 0)
     }
   }
 }
@@ -94,4 +132,23 @@ export default {
       img
         +desktop
           max-height: $navbar-item-img-max-height-desktop
+  .footer
+    +timeburner
+    color: $white
+    border-top: 12px solid $teal
+    margin-top: 3rem
+    font-weight: bold
+    font-size: 1.1rem
+    .container
+      max-width: 900px
+    a
+      color: inherit
+      &:hover
+        text-decoration: underline
+    .help
+      text-align: center
+      color: rgb(83, 97, 160)
+      margin-top: 4rem
+    .logos
+      margin-top: .5rem
 </style>

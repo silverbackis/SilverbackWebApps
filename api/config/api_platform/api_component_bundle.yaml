@@ -25,8 +25,8 @@ resources:
     Silverback\ApiComponentBundle\Entity\Component\Feature\Columns\FeatureColumnsItem: ~
     Silverback\ApiComponentBundle\Entity\Component\Feature\Stacked\FeatureStacked: ~
     Silverback\ApiComponentBundle\Entity\Component\Feature\Stacked\FeatureStackedItem: ~
-#    Silverback\ApiComponentBundle\Entity\Component\Feature\TextList\FeatureTextList: ~
-#    Silverback\ApiComponentBundle\Entity\Component\Feature\TextList\FeatureTextListItem: ~
+    Silverback\ApiComponentBundle\Entity\Component\Feature\TextList\FeatureTextList: ~
+    Silverback\ApiComponentBundle\Entity\Component\Feature\TextList\FeatureTextListItem: ~
     Silverback\ApiComponentBundle\Entity\Component\Form\Form:
         collectionOperations:
             get: ~
