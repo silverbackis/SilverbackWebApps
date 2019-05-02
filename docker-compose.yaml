@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+    app:
+        build:
+            context: ./app
+            dockerfile: _docker/Dockerfile
+        networks:
+            - app
+
+    smtp_relay:
+        image: namshi/smtp
+        networks:
+            - app
+
+networks:
+    app: ~

@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+    app:
+        env_file:
+            - app/_docker/.env.prod.local
+        networks:
+            - traefik_traefik
+        labels:
+            - "traefik.enable=true"
+            - "traefik.app.port=3000"
+            - "traefik.app.protocol=http"
+            - "traefik.app.frontend.rule=Host:${APP_HOST},silverbackwebapps.com,www.silverbackwebapps.org,silverbackwebapps.org,www.silverbackwebapps.co.uk,silverbackwebapps.co.uk,www.britishwebapps.co.uk,britishwebapps.co.uk,www.britishwebapps.com,britishwebapps.com"
+            - "traefik.app.frontend.redirect.regex=^https?://((www.)?(britishwebapps(.org|.co.uk|.com)|silverbackwebapps(.org|.co.uk))|silverbackwebapps.com)(.*)$$"
+            - "traefik.app.frontend.redirect.replacement=https://${APP_HOST}$$2"
+            - "traefik.app.frontend.redirect.permanent=true"
+
+networks:
+    traefik_traefik:
+        external: true

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,500,700,700i')
+
+@font-face
+  font-family: 'Time Burner'
+  src: url('~assets/fonts/timeburnernormal-webfont.woff2') format('woff2'),
+  url('~assets/fonts/timeburnernormal-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Time Burner'
+  src: url('~assets/fonts/timeburnerbold-webfont.woff2') format('woff2'),
+  url('~assets/fonts/timeburnerbold-webfont.woff') format('woff')
+  font-weight: 600
+  font-style: normal
+
+@import '~bulma/sass/utilities/initial-variables'
+@import '~bulma/sass/utilities/functions'
+
+
+
+//Aqua: 0DBFBA
+//Blue: 303082
+//Dark grey: 555555
+//BG grey: F8F8F8
+
+$blue: #303082
+$aqua: #0DBFBA
+$red: #e5133f
+$primary: $blue
+$secondary: $aqua
+$grey-lightest: #F8F8F8
+$grey-dark: #555555
+$grey: #7E7E7E
+$text: $grey-dark
+$info: $aqua
+
+$family-muli: 'Muli', $family-sans-serif
+$family-time-burner: 'Time Burner', $family-muli
+$family-primary: $family-muli
+$label-weight: 500
+
+$input-height: 2.8em
+$control-border-width: 1px
+$control-padding-horizontal: calc(1em - #{$control-border-width})
+
+//$button-border-width: 1px
+//$button-padding-vertical: calc(1em - #{$button-border-width})
+
+// $radius: 6px
+$link: $blue
+
+$navbar-padding-vertical: 1rem
+$navbar-height: 4rem
+$navbar-height-desktop: 6rem
+$navbar-item-img-max-height: calc(#{$navbar-height} - #{$navbar-padding-vertical * 2})
+$navbar-item-img-max-height-desktop: calc(#{$navbar-height-desktop} - #{$navbar-padding-vertical * 3})
+$navbar-item-color: $grey
+$navbar-item-hover-color: $text
+$navbar-item-active-color: $text
+$navbar-item-hover-background-color: transparent
+$navbar-item-active-background-color: transparent
+
+$box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+$footer-background-color: $aqua
+$footer-padding: 3rem 1.5rem 1rem
+
+$body-size: 1.1rem
+$body-line-height: 1.9rem
+$body-color: $grey-dark
+
+=timeburner
+  font-family: $family-time-burner
+
+=subtitle
+  color: $primary
+  font-size: 2.4rem
+  font-weight: bold
+
+=angle-bottom
+  position: absolute
+  content: ''
+  bottom: -1px
+  width: 100%
+  height: 6vw
+  max-height: 120px
+
+=angle-grey-bottom
+  +angle-bottom
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 1,10000 10000,0' stroke='%23F8F8F8' fill='%23F8F8F8' /%3E%3C/svg%3E") 100% 100% no-repeat
+  background-size: 100% 100%
+
+=angle-white-bottom
+  +angle-bottom
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 1,10000 10000,0' stroke='white' fill='white' /%3E%3C/svg%3E") 100% 100% no-repeat
+  background-size: 100% 100%
+
+//$pre-background: $grey-dark
+//$pre: $grey-lightest
+//$code: darken($red, 10%)
+
+//$content-blockquote-background-color: $white
+//$content-blockquote-border-left: 4px solid $primary
+//$content-blockquote-padding: .8em 1.05em
+
+.content blockquote
+  &:before
+    content: open-quote
+  &:after
+    content: close-quote
+  font-size: $size-4
+
+@import '~bulma/sass/utilities/derived-variables.sass'
