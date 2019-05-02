@@ -13,7 +13,13 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: 'icons/icon.png'
+      }
+    ]
   },
 
   /*
@@ -37,14 +43,34 @@ module.exports = {
     { src: '~/plugins/fontawesome', ssr: true },
     { src: '~/plugins/gsap', ssr: false }
   ],
-  
+
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    [
+      '@nuxtjs/pwa',
+      {
+        icon: {
+          iconSrc: 'static/icons/icon.png',
+          sizes: [1024, 512, 144]
+        },
+        manifest: true,
+        meta: false,
+        optimize: {
+          cssnano: {
+            zindex: false
+          }
+        }
+      }
+    ],
+    [
+      '@nuxtjs/google-tag-manager',
+      {
+        id: 'GTM-MVSWS73'
+      }
+    ]
   ],
   /*
    ** Axios module configuration

@@ -103,9 +103,15 @@ export default {
         color: $aqua
         .is-small
           font-size: 3rem
+        +mobile
+          font-size: 2.75rem
+          .is-small
+            font-size: 1.5rem
       &.has-text-white
         padding-left: 2.8rem
         font-size: 8rem
         margin-top: -1rem
         letter-spacing: .2rem
+        +mobile
+          font-size: 4rem
 </style>

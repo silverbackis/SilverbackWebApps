@@ -26,7 +26,7 @@ export default {
   display: block
   width: 30px
   height: 100%
-  background: 50% 50% no-repeat
+  background: 50% 60% no-repeat
   background-size: auto 85%
   margin-right: .5em
 .button.is-rounded
@@ -35,6 +35,7 @@ export default {
   padding-right: 2em
   margin-top: 1rem
   font-family: $family-time-burner
+  font-weight: bold
 .content
   display: inline-block
   padding: 0 2rem
@@ -42,8 +43,10 @@ export default {
   width: 100%
   text-align: left
   margin-bottom: 6vw
+  +mobile
+    padding: 0 1rem
   .title
     font-size: 2.4rem
     +mobile
-      font-size: 2rem
+      font-size: 1.8rem
 </style>

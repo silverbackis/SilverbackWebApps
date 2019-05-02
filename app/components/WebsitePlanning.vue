@@ -38,5 +38,5 @@
   background: url('~assets/images/image-tree-bird.svg') 0 50% no-repeat
   background-size: auto 100%
   +mobile
-    height: 320px
+    height: 150px
 </style>

@@ -21,7 +21,10 @@
               <span class="icon is-small">
                 <i class="button-icon is-phone"></i>
               </span>
-              <span>+44 (0)208 133 2939</span>
+              <span class="is-hidden-tablet">
+                call us
+              </span>
+              <span class="is-hidden-mobile">+44 (0)208 133 2939</span>
             </a>
           </div>
           <div>
@@ -32,7 +35,12 @@
               <span class="icon is-small">
                 <i class="button-icon is-email"></i>
               </span>
-              <span>contact@silverbackwebapps.com</span>
+              <span class="is-hidden-tablet">
+                email us
+              </span>
+              <span class="is-hidden-mobile">
+                contact@silverbackwebapps.com
+              </span>
             </a>
           </div>
         </div>
@@ -55,5 +63,5 @@
   background: url('~assets/images/icon-contact.svg') 0 50% no-repeat
   background-size: auto 100%
   +mobile
-    height: 320px
+    height: 115px
 </style>

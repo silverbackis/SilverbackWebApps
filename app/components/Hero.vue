@@ -120,4 +120,8 @@ export default {
     +desktop
       left: auto
       right: 115px
+    +mobile
+      top: 5%
+      height: 110%
+      right: 0
 </style>

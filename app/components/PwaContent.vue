@@ -18,6 +18,7 @@
 @import '~assets/css/_vars'
 .section
   position: relative
+  overflow: hidden
   &:after
     +angle-grey-bottom
 h3

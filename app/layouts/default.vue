@@ -5,7 +5,7 @@
         <nav-bar
           class="is-transparent is-dark"
           :style="{
-            backgroundColor: `rgba(33,46,99,${navOpacity})`
+            backgroundColor: `rgba(48,48,130,${navOpacity})`
           }"
         />
       </div>
