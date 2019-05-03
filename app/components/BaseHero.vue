@@ -14,13 +14,15 @@
 
 .hero
   position: relative
-  min-height: 440px
+  min-height: 450px
   height: 45vh
   max-height: 1000px
   overflow: hidden
   +tablet
     min-height: 540px
     height: 75vh
+  +desktop
+    min-height: 580px
   .hero-body
     padding: 0
     height: 100%

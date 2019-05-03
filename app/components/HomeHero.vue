@@ -1,43 +1,43 @@
 <template>
   <base-hero class="home-hero">
-    <div
-      class="home-hero-columns columns is-mobile is-vcentered is-gapless is-centered"
-    >
-      <div class="column is-narrow">
-        <h1 ref="heroTitle" class="title">
-          <span class="has-text-secondary">
-            It's <span class="is-small">about</span>
-          </span>
-          <span class="has-text-white">time</span>
-        </h1>
-      </div>
-      <div class="column is-hero-column is-narrow">
-        <svg
-          class="hero-svg"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="-2 -2 795.6 1116.6"
-          xml:space="preserve"
-        >
-          <defs>
-            <clipPath id="clip-path">
-              <rect
-                ref="clipRectangle__top"
-                x="50%"
-                y="-40%"
-                width="0%"
-                height="140%"
-                fill="white"
-                class="clip-rectangle top"
-                style="display: none;"
-              />
-            </clipPath>
-          </defs>
-          <path
-            ref="svgLogo__noFace"
-            class="path noface"
-            d="M341,14.5c-193,0-300.4,90.8-322.2,272.3c-2.5,23.1-4.4,43.6-4.8,71.2c-0.2,12.3-0.4,16.4-0.1,23
+    <section class="section home-hero-section">
+      <div class="container has-text-centered">
+        <div class="content">
+          <div class="columns is-vcentered home-hero-columns is-mobile">
+            <div class="column is-narrow home-hero-column">
+              <h1 ref="heroTitle" class="title">
+                <span class="has-text-secondary">
+                  It's <span class="is-small">about</span>
+                </span>
+                <span class="has-text-white">time</span>
+              </h1>
+
+              <svg
+                class="hero-svg"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="-2 -2 795.6 1116.6"
+                xml:space="preserve"
+              >
+                <defs>
+                  <clipPath id="clip-path">
+                    <rect
+                      ref="clipRectangle__top"
+                      x="50%"
+                      y="-40%"
+                      width="0%"
+                      height="160%"
+                      fill="white"
+                      class="clip-rectangle top"
+                      style="display: none;"
+                    />
+                  </clipPath>
+                </defs>
+                <path
+                  ref="svgLogo__noFace"
+                  class="path noface"
+                  d="M341,14.5c-193,0-300.4,90.8-322.2,272.3c-2.5,23.1-4.4,43.6-4.8,71.2c-0.2,12.3-0.4,16.4-0.1,23
           c-0.1,18.3,1.2,33.5,2.1,45.1c0.8,10,2.3,21.1,3.4,28.8c1.2,8,2.5,15,3.7,21c1.6,8.2,4.4,19.1,8.3,32.8c5,17.6,14.9,40.5,23.1,54.9
           c7.3,14.1,14.7,24.5,24.8,35.8c5.4,6.1,13.4,15.2,23.3,23.4c6,5.2,11.5,9.4,16.1,12.6c6.1,4.3,11.7,7.8,15.1,9.8
           c3.3,2,6.3,3.7,11.1,6.2c1.5,0.8-3-1.6,6.1,3.1c44.7,22.9,103,34.1,169,34.1h147.5c19.7,0,34.2,5.8,43.4,17.3
@@ -45,12 +45,12 @@
           c3.7,0.2,7.4,0.4,11.3,0.4h284.6c215.3-0.3,322.9-115.6,322.9-346.2c0-218.5-101.8-327.8-305.4-327.8H321.8
           c-19.7,0-34.1-5.7-43.3-17.2c-9.3-11.5-14-23.8-14-37.1c0-13.3,4.6-25.6,14-37.1c9.2-11.5,23.7-17.2,43.3-17.2h246.4
           c90.2,0,136.5-50.1,138.8-150.3v-5.4c0-0.3,0-48.6,0-144.7H573.5c-1.2,0-2.3-0.1-3.4-0.1H341"
-          />
+                />
 
-          <path
-            ref="svgLogo__back"
-            class="path logo back"
-            d="M341,14.5c-193,0-300.4,90.8-322.2,272.3c11.9,5.1,90.2,39.2,109.3,62.9c21.5-1.2,35.5,13.4,39.8,21.2
+                <path
+                  ref="svgLogo__back"
+                  class="path logo back"
+                  d="M341,14.5c-193,0-300.4,90.8-322.2,272.3c11.9,5.1,90.2,39.2,109.3,62.9c21.5-1.2,35.5,13.4,39.8,21.2
           c8.2,1.6,7,9.8,7,9.8s-3.5,22.4-10.2,28.5c4.3,7.3-1.6,10.6-1.6,10.6s-2.7,13,13.3,26.1c15.6,7.3,25.8,4.1,44.5,27.7
           c11.3,3.3,16.4,9,16.4,9s2,13,14.8,22c12.5,17.1,6.6,22.8,22.6,49.7c13.6,6.5,16.8,15.1,10.1,26.1c-4.7,4.1-29.3,54.2-67.1,49.7
           c-15.5,10.5-43.3,14.8-63.7,23.8c44.6,23,100,34.5,166,34.5h147.5c19.7,0,34.2,5.8,43.4,17.3c9.2,11.5,13.9,23.8,13.9,37.1
@@ -58,11 +58,14 @@
           c215.3-0.3,322.9-115.6,322.9-346.2c0-218.5-101.8-327.8-305.4-327.8H321.8c-19.7,0-34.1-5.7-43.3-17.2c-9.3-11.5-14-23.8-14-37.1
           c0-13.3,4.6-25.6,14-37.1c9.2-11.5,23.7-17.2,43.3-17.2h246.4c90.2,0,136.5-50.1,138.8-150.3v-5.4c0-0.3,0-48.6,0-144.7H573.5
           c-1.2,0-2.3-0.1-3.4-0.1H341"
-            clip-path="url(#clip-path)"
-          />
-        </svg>
+                  clip-path="url(#clip-path)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </base-hero>
 </template>
 
@@ -146,26 +149,30 @@ export default {
 @import '~bulma/sass/utilities/mixins'
 
 .home-hero
-  .home-hero-columns
+  .home-hero-section
+    padding-top: 0
+    padding-bottom: 0
     height: 100%
-    > .column
-      &.is-hero-column
-        position: relative
+    .container
+      height: 100%
+      .content
         height: 100%
-        +mobile
-          max-width: 40vw
+        .home-hero-columns
+          height: 100%
+          .home-hero-column
+            height: 100%
+            position: relative
 
   .hero-svg
-    position: relative
-    top: 5%
-    height: 105%
-    transform: translateX(-16%)
+    position: absolute
+    top: 10%
+    height: 100%
+    transform: translateX(-25%)
+    left: 100%
     +tablet
-      top: -20%
-      height: 142%
-      transform: translateX(0)
-    +desktop
-      transform: translateX(-5%)
+      top: -17%
+      height: 147%
+      transform: translateX(-20%)
     .clip-rectangle
       transform-origin: 50% 50%
       &.top
@@ -184,12 +191,16 @@ export default {
       &.noface
         display: none
   .title
+    position: relative
+    display: inline-block
     opacity: 0
-    transform: translateX(8%)
+    margin: 0
+    top: 50%
+    transform: translateY(-40%)
     +tablet
-      transform: translateX(30%) translateY(-22%)
-    +desktop
-      transform: translateX(10%) translateY(-22%)
+      transform: translateY(-60%)
+    //+desktop
+    //  transform: translateY(5%)
     > span
       display: block
       &.has-text-secondary
