@@ -1,6 +1,6 @@
 <template>
   <section class="page index">
-    <hero />
+    <home-hero />
     <pwa-content />
     <website-types />
     <website-planning />
@@ -9,13 +9,19 @@
 </template>
 
 <script>
-import Hero from '~/components/Hero'
+import HomeHero from '~/components/HomeHero'
 import PwaContent from '~/components/PwaContent'
 import WebsiteTypes from '~/components/WebsiteTypes'
 import WebsitePlanning from '~/components/WebsitePlanning'
 import ExpertAdvice from '~/components/ExpertAdvice'
 export default {
-  components: { Hero, PwaContent, WebsiteTypes, WebsitePlanning, ExpertAdvice }
+  components: {
+    HomeHero,
+    PwaContent,
+    WebsiteTypes,
+    WebsitePlanning,
+    ExpertAdvice
+  }
 }
 </script>
 
@@ -36,17 +42,20 @@ export default {
   margin-top: 1rem
   font-family: $family-time-burner
   font-weight: bold
+  +tablet
+    font-size: 1.25rem
 .content
   display: inline-block
   padding: 0 2rem
   max-width: 850px
   width: 100%
   text-align: left
-  margin-bottom: 6vw
   +mobile
-    padding: 0 1rem
+    padding: 0
   .title
     font-size: 2.4rem
+    .has-text-secondary
+      display: inline-block
     +mobile
-      font-size: 1.8rem
+      font-size: 1.6rem
 </style>

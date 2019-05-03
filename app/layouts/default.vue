@@ -41,8 +41,16 @@ export default {
       navOpacity: 0
     }
   },
+  watch: {
+    $route() {
+      window.Intercom('update')
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.updateNavOpacity)
+    window.Intercom('boot', {
+      app_id: 'zqlbryjc'
+    })
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.updateNavOpacity)
@@ -65,6 +73,7 @@ export default {
   display: flex
   min-height: 100vh
   flex-direction: column
+  background: $white
   .page
     padding-bottom: 3rem
   +desktop
@@ -77,6 +86,7 @@ export default {
     color: $white
     padding-top: 5vw
     text-align: right
+    line-height: 1.1rem
     &:before
       content: ''
       position: absolute

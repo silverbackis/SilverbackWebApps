@@ -15,11 +15,11 @@
             project.
           </p>
           <div class="columns is-mobile is-gapless is-centered">
-            <div class="column is-narrow-mobile is-12-tablet">
+            <div class="column is-narrow-mobile is-12-mobile">
               <div
-                class="columns features has-text-left is-multiline is-gapless"
+                class="columns features has-text-left is-multiline is-gapless is-mobile"
               >
-                <div class="column is-6-tablet is-4-desktop">
+                <div class="column is-6-mobile is-4-desktop">
                   <ul class="fa-ul">
                     <website-type-list-item
                       v-for="type of websiteTypes.slice(0, 6)"
@@ -28,7 +28,7 @@
                     />
                   </ul>
                 </div>
-                <div class="column is-6-tablet is-4-desktop">
+                <div class="column is-6-mobile is-4-desktop">
                   <ul class="fa-ul">
                     <website-type-list-item
                       v-for="type of websiteTypes.slice(6, 12)"
@@ -37,9 +37,9 @@
                     />
                   </ul>
                 </div>
-                <div class="column is-12-tablet is-4-desktop">
-                  <div class="columns is-multiline is-gapless">
-                    <div class="column is-6-tablet is-12-desktop">
+                <div class="column is-12-mobile is-4-tablet">
+                  <div class="columns is-multiline is-gapless is-mobile">
+                    <div class="column is-6-mobile is-12-desktop">
                       <ul class="fa-ul">
                         <website-type-list-item
                           v-for="type of websiteTypes.slice(12, 15)"
@@ -48,7 +48,7 @@
                         />
                       </ul>
                     </div>
-                    <div class="column is-6-tablet is-12-desktop">
+                    <div class="column is-6-mobile is-12-tablet">
                       <ul class="fa-ul">
                         <website-type-list-item
                           v-for="type of websiteTypes.slice(15, 18)"
@@ -109,6 +109,8 @@ export default {
     +angle-white-bottom
   .section
     padding-top: 1rem
+    .content
+      margin-bottom: 6vw
   .portfolio-header
     display: block
     height: 390px
@@ -126,12 +128,10 @@ export default {
       margin-top: 0
     li
       margin-bottom: .5rem
-      font-size: 1.1rem
-      +mobile
-        font-size: 1rem
+      font-size: inherit
+      line-height: normal
       .fa-li
-        margin-right: 1rem
+        margin-right: .5em
         color: $aqua
-    .column:last-child .column:last-child li:last-child span:last-child
-      font-size: .9rem
+        width: auto
 </style>

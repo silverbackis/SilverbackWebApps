@@ -16,11 +16,14 @@
 
 <style lang="sass" scoped>
 @import '~assets/css/_vars'
+@import '~bulma/sass/utilities/mixins'
 .section
   position: relative
   overflow: hidden
   &:after
     +angle-grey-bottom
+  .content
+    margin-bottom: 6vw
 h3
   display: block
   height: 50px
@@ -28,4 +31,7 @@ h3
   background-size: auto 100%
   text-indent: -1000px
   overflow: hidden
+  margin-bottom: 1em
+  +mobile
+    height: 35px
 </style>

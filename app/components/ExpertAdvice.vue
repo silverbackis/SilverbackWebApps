@@ -14,10 +14,7 @@
             what we can offer.
           </p>
           <div>
-            <a
-              href="tel:+4402081332939"
-              class="button is-info is-rounded is-medium"
-            >
+            <a href="tel:+4402081332939" class="button is-info is-rounded">
               <span class="icon is-small">
                 <i class="button-icon is-phone"></i>
               </span>
@@ -30,7 +27,7 @@
           <div>
             <a
               href="mailto:contact@silverbackwebapps.com"
-              class="button is-info is-rounded is-medium"
+              class="button is-info is-rounded"
             >
               <span class="icon is-small">
                 <i class="button-icon is-email"></i>

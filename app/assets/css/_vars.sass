@@ -16,6 +16,7 @@
 
 @import '~bulma/sass/utilities/initial-variables'
 @import '~bulma/sass/utilities/functions'
+@import '~bulma/sass/utilities/mixins'
 
 
 
@@ -66,7 +67,9 @@ $footer-background-color: $aqua
 $footer-padding: 3rem 1.5rem 1rem
 
 $body-size: 1.1rem
+$body-size-mobile: .8rem
 $body-line-height: 1.9rem
+$body-line-height-mobile: 1.5rem
 $body-color: $grey-dark
 
 =timeburner
@@ -82,17 +85,21 @@ $body-color: $grey-dark
   content: ''
   bottom: -1px
   width: 100%
-  height: 6vw
-  max-height: 120px
+  height: 10vw
+  max-height: 180px
+  +desktop
+    height: 6vw
+    max-height: 120px
+
 
 =angle-grey-bottom
   +angle-bottom
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 1,10000 10000,0' stroke='%23F8F8F8' fill='%23F8F8F8' /%3E%3C/svg%3E") 100% 100% no-repeat
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 -400,10000 10000,0' stroke='%23F8F8F8' fill='%23F8F8F8' /%3E%3C/svg%3E") 100% 100% no-repeat
   background-size: 100% 100%
 
 =angle-white-bottom
   +angle-bottom
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 1,10000 10000,0' stroke='white' fill='white' /%3E%3C/svg%3E") 100% 100% no-repeat
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 -400,10000 10000,0' stroke='white' fill='white' /%3E%3C/svg%3E") 100% 100% no-repeat
   background-size: 100% 100%
 
 //$pre-background: $grey-dark

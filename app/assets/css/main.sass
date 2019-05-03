@@ -65,11 +65,17 @@ a
 ::-moz-selection
   +selection
 
+html
+  background: $grey-darker
+
 body,
 html
   height: 100%
 
 body
+  +mobile
+    font-size: $body-size-mobile
+    line-height: $body-line-height-mobile
   .site-content
     transition: background-color .3s
 
