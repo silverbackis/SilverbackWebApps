@@ -8,6 +8,9 @@ module.exports = {
    */
   head: {
     title: 'Silverback Web Apps',
+    htmlAttrs: {
+      lang: 'en_GB'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -104,5 +107,13 @@ module.exports = {
         })
       }
     }
+  },
+  manifest: {
+    name: 'Silverback Web Apps',
+    short_name: 'Silverback',
+    description: pkg.description,
+    lang: 'en',
+    background_color: '#303082',
+    theme_color: '#0dbfba'
   }
 }

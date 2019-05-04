@@ -17,19 +17,42 @@
           </p>
 
           <p>
-            We are offering 30% discount for starter web apps (£899 to £629) for
-            a limited time only. Let us know a little bit about what you want,
-            and we will get back to you with ideas for features and a proposal
-            as soon as possible.
+            <b>
+              We are offering 30% discount for starter web apps (£899 to £629)
+              for a limited time only. Let us know a little bit about what you
+              want, and we will get back to you with ideas for features and a
+              proposal as soon as possible.
+            </b>
           </p>
+
+          <div>
+            <button class="button is-info is-rounded" @click="showChat">
+              <span class="icon is-small">
+                <i class="button-icon is-chat"></i>
+              </span>
+              <span>Tell us your needs</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
+<script>
+export default {
+  methods: {
+    showChat() {
+      window.Intercom('showNewMessage')
+    }
+  }
+}
+</script>
+
 <style lang="sass">
 @import '~bulma/sass/utilities/mixins'
+.button-icon.is-chat
+  background-image: url('~assets/images/icon-chat.svg')
 
 .website-planning-header
   display: block
