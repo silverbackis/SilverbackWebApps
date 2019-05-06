@@ -9,7 +9,8 @@ module.exports = {
   head: {
     title: 'Silverback Web Apps',
     htmlAttrs: {
-      lang: 'en-GB'
+      lang: 'en-GB',
+      class: 'is-sbwa-custom'
     },
     meta: [
       { charset: 'utf-8' },

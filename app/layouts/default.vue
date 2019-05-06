@@ -12,19 +12,17 @@
       <nuxt />
     </div>
     <footer class="footer">
-      <div class="container">
-        <div class="footer-logos">
-          <img src="~assets/images/logo-fsb.png" alt="FSB Logo" />
-          <img src="~assets/images/logo-carbon.svg" alt="Carbon Neutral Logo" />
-        </div>
-        <div class="help">
-          <span class="is-inline-block">
-            &copy; {{ new Date().getFullYear() }} Silverback Internet Services
-            Limited
-          </span>
-          <span class="is-inline-block">VAT: GB 177 0995 64</span>
-          <span class="is-inline-block">Company Number: 07120829</span>
-        </div>
+      <div class="footer-logos">
+        <img src="~assets/images/logo-fsb.png" alt="FSB Logo" />
+        <img src="~assets/images/logo-carbon.svg" alt="Carbon Neutral Logo" />
+      </div>
+      <div class="help">
+        <span class="is-inline-block">
+          &copy; {{ new Date().getFullYear() }} Silverback Internet Services
+          Limited
+        </span>
+        <span class="is-inline-block">VAT: GB 177 0995 64</span>
+        <span class="is-inline-block">Company Number: 07120829</span>
       </div>
     </footer>
   </div>
@@ -48,17 +46,22 @@ export default {
   },
   mounted() {
     document.body.addEventListener('scroll', this.updateNavOpacity)
+    window.addEventListener('scroll', this.updateNavOpacity)
     window.Intercom('boot', {
       app_id: 'zqlbryjc'
     })
   },
   beforeDestroy() {
     document.body.removeEventListener('scroll', this.updateNavOpacity)
+    window.removeEventListener('scroll', this.updateNavOpacity)
   },
   methods: {
     updateNavOpacity() {
       this.navOpacity = Math.max(
-        Math.min((document.body.scrollTop - 120) / 150, 0.97),
+        Math.min(
+          ((document.body.scrollTop || window.scrollY) - 120) / 150,
+          0.97
+        ),
         0
       )
     }
@@ -84,27 +87,25 @@ export default {
   .footer
     position: relative
     color: $white
-    padding-top: 5vw
-    padding-bottom: 90px
-    text-align: right
+    padding-top: 40px
+    text-align: left
     line-height: 1.1rem
+    padding-bottom: 1em
+    padding-right: 100px
     &:before
-      content: ''
-      position: absolute
+      +angle-white-bottom
       top: -1px
+      bottom: auto
       left: 0
       width: 100%
-      height: 6vw
-      max-height: 120px
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='0,0 1,10000 10000,0' stroke='white' fill='white' /%3E%3C/svg%3E") 100% 100% no-repeat
-      background-size: 100% 100%
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' height='10000' width='10000'%3E%3Cpolygon points='10000,10000 -400,0 10000,0' stroke='white' fill='white' /%3E%3C/svg%3E")
     .footer-logos
-      margin-bottom: 2rem
+      margin-bottom: 1em
       height: 45px
       +mobile
         height: 30px
         margin: 1rem 0
       img
         height: 100%
-        margin-left: 1rem
+        margin-right: 1rem
 </style>

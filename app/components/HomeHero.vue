@@ -127,15 +127,9 @@ export default {
         },
         '-=.9'
       )
-    window.addEventListener(
-      'load',
-      () => {
-        this.$nextTick(() => {
-          timeline.play()
-        })
-      },
-      false
-    )
+    this.$nextTick(() => {
+      timeline.play()
+    })
   },
   beforeDestroy() {
     this.$root.$off('heroAnimate', this.showTitle)

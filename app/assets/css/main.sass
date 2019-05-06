@@ -67,16 +67,15 @@ a
 
 html
   background: $grey-darker
-  overflow: hidden
+  height: 100%
+  &.intercom-mobile-messenger-active.is-sbwa-custom
+    overflow: visible !important
 
 body,
 html
-  height: 100%
   min-height: 100%
 
 body
-  overflow: auto
-  -webkit-overflow-scrolling: touch
   +mobile
     font-size: $body-size-mobile
     line-height: $body-line-height-mobile

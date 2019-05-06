@@ -28,13 +28,15 @@ export default {
   }),
   mounted() {
     document.body.addEventListener('scroll', this.updateWindowY)
+    window.addEventListener('scroll', this.updateWindowY)
   },
   beforeDestroy() {
     document.body.removeEventListener('scroll', this.updateWindowY)
+    window.removeEventListener('scroll', this.updateWindowY)
   },
   methods: {
     updateWindowY() {
-      this.windowY = Math.max(document.body.scrollTop, 0)
+      this.windowY = Math.max(document.body.scrollTop || window.scrollY, 0)
       this.requestYTick()
     },
     requestYTick() {
