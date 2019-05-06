@@ -27,14 +27,14 @@ export default {
     navY: 0
   }),
   mounted() {
-    window.addEventListener('scroll', this.updateWindowY)
+    document.body.addEventListener('scroll', this.updateWindowY)
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.updateWindowY)
+    document.body.removeEventListener('scroll', this.updateWindowY)
   },
   methods: {
     updateWindowY() {
-      this.windowY = Math.max(window.scrollY, 0)
+      this.windowY = Math.max(document.body.scrollTop, 0)
       this.requestYTick()
     },
     requestYTick() {

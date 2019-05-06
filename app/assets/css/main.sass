@@ -67,6 +67,7 @@ a
 
 html
   background: $grey-darker
+  overflow: hidden
 
 body,
 html
@@ -74,6 +75,8 @@ html
   min-height: 100%
 
 body
+  overflow: auto
+  -webkit-overflow-scrolling: touch
   +mobile
     font-size: $body-size-mobile
     line-height: $body-line-height-mobile

@@ -47,18 +47,18 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.updateNavOpacity)
+    document.body.addEventListener('scroll', this.updateNavOpacity)
     window.Intercom('boot', {
       app_id: 'zqlbryjc'
     })
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.updateNavOpacity)
+    document.body.removeEventListener('scroll', this.updateNavOpacity)
   },
   methods: {
     updateNavOpacity() {
       this.navOpacity = Math.max(
-        Math.min((window.scrollY - 120) / 150, 0.97),
+        Math.min((document.body.scrollTop - 120) / 150, 0.97),
         0
       )
     }
