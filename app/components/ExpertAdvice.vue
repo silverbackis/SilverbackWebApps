@@ -7,7 +7,7 @@
           <h3 class="title has-text-primary">
             get free <span class="has-text-secondary">expert advice</span>
           </h3>
-          <p>
+          <p ref="chatTrigger">
             Whether your idea is in its infancy or you have a developed concept
             we’d love to chat about it. We can brainstorm ideas and give our
             expert advice free of charge to give you a feel for how we work and
@@ -45,6 +45,35 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      chatTriggered: false
+    }
+  },
+  mounted() {
+    document.body.addEventListener('scroll', this.checkChatTrigger)
+  },
+  beforeDestroy() {
+    document.body.removeEventListener('scroll', this.checkChatTrigger)
+  },
+  methods: {
+    checkChatTrigger() {
+      if (!this.chatTriggered) {
+        const boundingRect = this.$refs.chatTrigger.getBoundingClientRect()
+        const midY = window.innerHeight / 2
+        if (boundingRect.top <= midY) {
+          window.Intercom('trackEvent', 'expert-advice-scroll')
+          this.chatTriggered = true
+          document.body.removeEventListener('scroll', this.checkChatTrigger)
+        }
+      }
+    }
+  }
+}
+</script>
 
 <style lang="sass">
 @import '~bulma/sass/utilities/mixins'
