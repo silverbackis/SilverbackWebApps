@@ -36,7 +36,10 @@ export default {
   },
   methods: {
     updateWindowY() {
-      this.windowY = Math.max(document.body.scrollTop || window.scrollY, 0)
+      this.windowY = Math.max(
+        document.body.children[0].getBoundingClientRect().top * -1,
+        0
+      )
       this.requestYTick()
     },
     requestYTick() {

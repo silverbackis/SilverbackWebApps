@@ -36,7 +36,8 @@ export default {
   },
   data() {
     return {
-      navOpacity: 0
+      navOpacity: 0,
+      showScrollTop: 0
     }
   },
   watch: {
@@ -59,7 +60,8 @@ export default {
     updateNavOpacity() {
       this.navOpacity = Math.max(
         Math.min(
-          ((document.body.scrollTop || window.scrollY) - 120) / 150,
+          (document.body.children[0].getBoundingClientRect().top * -1 - 120) /
+            150,
           0.97
         ),
         0
