@@ -71,7 +71,7 @@
 
 <script>
 import { Power1, Elastic, Back } from 'gsap'
-import BaseHero from '~/components/BaseHero'
+import BaseHero from './BaseHero'
 
 export default {
   components: { BaseHero },
@@ -105,7 +105,7 @@ export default {
     }
     this.$root.$on('heroAnimate', this.showTitle)
     // SVG
-    const timeline = new this.$gsap.timeline({ paused: true, delay: 0.4 }) // eslint-disable-line new-cap
+    const timeline = new this.$gsap.timeline({ paused: true, delay: 0.6 }) // eslint-disable-line new-cap
     timeline
       .addLabel('mask')
       .set(this.$refs.clipRectangle__top, { display: 'block' }, 'mask')
@@ -127,9 +127,15 @@ export default {
         },
         '-=.9'
       )
-    this.$nextTick(() => {
-      timeline.play()
-    })
+    window.addEventListener(
+      'load',
+      () => {
+        this.$nextTick(() => {
+          timeline.play()
+        })
+      },
+      false
+    )
   },
   beforeDestroy() {
     this.$root.$off('heroAnimate', this.showTitle)

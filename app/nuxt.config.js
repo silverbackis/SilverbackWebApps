@@ -9,7 +9,7 @@ module.exports = {
   head: {
     title: 'Silverback Web Apps',
     htmlAttrs: {
-      lang: 'en_GB'
+      lang: 'en-GB'
     },
     meta: [
       { charset: 'utf-8' },
@@ -18,7 +18,7 @@ module.exports = {
     ],
     link: [
       {
-        rel: 'icon',
+        rel: 'shortcut icon',
         type: 'image/png',
         href: 'icons/icon.png'
       }
@@ -56,11 +56,20 @@ module.exports = {
       '@nuxtjs/pwa',
       {
         icon: {
-          iconSrc: 'static/icons/icon.png',
-          sizes: [1024, 512, 144]
+          iconSrc: 'static/icons/icon-ios-1024.png'
         },
-        manifest: true,
-        meta: false,
+        manifest: {
+          name: 'Silverback Web Apps',
+          short_name: 'Silverback',
+          description: pkg.description,
+          lang: 'en-GB',
+          background_color: '#303082',
+          theme_color: '#0dbfba'
+        },
+        meta: {
+          mobileAppIOS: true,
+          theme_color: '#0dbfba'
+        },
         optimize: {
           cssnano: {
             zindex: false
@@ -107,13 +116,5 @@ module.exports = {
         })
       }
     }
-  },
-  manifest: {
-    name: 'Silverback Web Apps',
-    short_name: 'Silverback',
-    description: pkg.description,
-    lang: 'en',
-    background_color: '#303082',
-    theme_color: '#0dbfba'
   }
 }

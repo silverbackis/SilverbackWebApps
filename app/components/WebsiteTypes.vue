@@ -119,6 +119,7 @@ export default {
     background-size: auto 100%
     +mobile
       height: 320px
+      background-image:  url('~assets/images/image-portfolio-mobile.png')
   .container
     margin: 0 auto 3vw
   .features

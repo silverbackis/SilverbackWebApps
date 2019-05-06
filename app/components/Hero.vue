@@ -1,6 +1,6 @@
 <template>
-  <base-hero class="home-hero">
-    <template slot="hero-svg">
+  <div class="hero is-primary">
+    <div class="hero-body">
       <div class="svg-wrapper">
         <h1 ref="heroTitle" class="title">
           <span class="has-text-secondary">
@@ -12,7 +12,6 @@
           class="hero-svg"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="-2 -2 795.6 1116.6"
           xml:space="preserve"
         >
@@ -58,16 +57,14 @@
           />
         </svg>
       </div>
-    </template>
-  </base-hero>
+    </div>
+  </div>
 </template>
 
 <script>
 import { Power1, Elastic, Back } from 'gsap'
-import BaseHero from '~/components/BaseHero'
 
 export default {
-  components: { BaseHero },
   data: () => ({
     heroTween: null
   }),
@@ -98,7 +95,7 @@ export default {
     }
     this.$root.$on('heroAnimate', this.showTitle)
     // SVG
-    const timeline = new this.$gsap.timeline({ paused: true, delay: 0.4 }) // eslint-disable-line new-cap
+    const timeline = new this.$gsap.timeline({ paused: true, delay: 1.5 }) // eslint-disable-line new-cap
     timeline
       .addLabel('mask')
       .set(this.$refs.clipRectangle__top, { display: 'block' }, 'mask')
@@ -120,8 +117,10 @@ export default {
         },
         '-=.9'
       )
-    this.$nextTick(() => {
-      timeline.play()
+    window.load(() => {
+      this.$nextTick(() => {
+        timeline.play()
+      })
     })
   },
   beforeDestroy() {
@@ -140,24 +139,45 @@ export default {
 <style lang="sass">
 @import 'assets/css/vars'
 @import '~bulma/sass/utilities/mixins'
-.clip-rectangle
-  transform-origin: 50% 50%
-  &.top
-    transform: rotate(45deg)
-  &.bottom
-    transform: rotate(-30deg)
-.path
-  stroke-width: 4px
-  fill: $aqua
-  stroke: transparent
-  &.back
+@function rgb-format($color)
+  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})")
+
+.hero
+  position: relative
+  min-height: 450px
+  height: 45vh
+  max-height: 1000px
+  overflow: hidden
+  +tablet
+    min-height: 540px
+    height: 75vh
+  +desktop
+    min-height: 580px
+  .hero-body
+    padding: 0
+    height: 100%
+    &:after
+      left: 0
+      +angle-white-bottom
+
+  .clip-rectangle
+    transform-origin: 50% 50%
+    &.top
+      transform: rotate(45deg)
+    &.bottom
+      transform: rotate(-30deg)
+  .path
+    stroke-width: 4px
+    fill: $aqua
     stroke: transparent
-  &.top
-    fill: transparent
-    stroke: transparent
-  &.noface
-    display: none
-.home-hero
+    &.back
+      stroke: transparent
+    &.top
+      fill: transparent
+      stroke: transparent
+    &.noface
+      display: none
+
   .svg-wrapper
     position: relative
     display: inline-flex
