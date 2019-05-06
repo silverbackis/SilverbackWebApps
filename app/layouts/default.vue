@@ -85,6 +85,7 @@ export default {
     position: relative
     color: $white
     padding-top: 5vw
+    padding-bottom: 90px
     text-align: right
     line-height: 1.1rem
     &:before

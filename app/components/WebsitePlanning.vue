@@ -18,10 +18,10 @@
 
           <p>
             <b>
-              We are offering 30% discount for starter web apps (£899 to £629)
-              for a limited time only. Let us know a little bit about what you
-              want, and we will get back to you with ideas for features and a
-              proposal as soon as possible.
+              We are offering 30% discount for starter web apps (was £899, now
+              £629) for a limited time only. Let us know a little bit about what
+              you want, and we will get back to you with ideas for features and
+              a proposal as soon as possible.
             </b>
           </p>
 
