@@ -87,11 +87,12 @@ export default {
   .footer
     position: relative
     color: $white
-    padding-top: 40px
     text-align: left
     line-height: 1.1rem
-    padding-bottom: 1em
-    padding-right: 100px
+    padding: 40px 85px 1rem 15px
+    +mobile
+      .help
+        font-size: .65rem
     &:before
       +angle-white-bottom
       top: -1px
